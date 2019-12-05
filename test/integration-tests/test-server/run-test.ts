@@ -8,7 +8,7 @@ export async function startTestServer(server: GraphQLServer) {
     config();
     jest.setTimeout(15000);
     const connectionString =
-        'mongodb+srv://appusr:apppassword@cluster0-jotpj.mongodb.net/test?retryWrites=true';
+        ''; // oh no you dont get this connection string
     await initConnection({ connectionString, waitUntilReconnectInMs: 5000 }, logger as any);
     await mongoose.connection.dropDatabase();
     await mongoose.connection.modelNames().forEach(modelName => {
